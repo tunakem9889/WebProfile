@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuan Nguyen | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <nav class="glass container">
+        <div class="logo">TN.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#todo">Todo List</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1 class="float">Xin chào, tôi là Tuan Nguyen</h1>
+            <p>Sinh viên Khoa học Máy tính | Đam mê xây dựng phần mềm sạch và hiệu quả.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Liên hệ ngay</a>
+                <a href="https://github.com/tunakem9889" target="_blank" class="btn glass">GitHub <i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>Giới thiệu bản thân</h2>
+            <div class="about-grid">
+                <div class="glass info-card">
+                    <p>Chào mừng bạn đến với không gian của tôi! Tôi hiện đang là sinh viên Khoa học Máy tính, tập trung vào việc rèn luyện cấu trúc dữ liệu, thuật toán và phát triển ứng dụng đa nền tảng.</p>
+                    <p>Mục tiêu của tôi là trở thành một kỹ sư phần mềm chuyên nghiệp, có khả năng mang lại những giải pháp hiệu quả và có khả năng mở rộng.</p>
+                </div>
+                <div align="center">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/5eeea355389655.59822ff824b72.gif" alt="professional animation" width="100%" style="border-radius: 20px;"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Kỹ năng & Công cụ</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C/C++</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Dart</span>
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">React Native</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML5/CSS3</span>
+                <span class="skill-tag">SQL Server</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Figma</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Dự án tiêu biểu</h2>
+            <div class="projects-grid" id="github-projects">
+                <!-- Data will be loaded from GitHub -->
+                <div class="glass project-card" style="text-align: center; padding: 3rem;">
+                    <p>Đang tải dự án từ GitHub...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Stats -->
+        <section id="stats">
+            <h2>Hoạt động GitHub</h2>
+            <div style="display: flex; flex-direction: column; gap: 2rem; align-items: center;">
+                <img src="https://github-readme-stats.vercel.app/api?username=tunakem9889&show_icons=true&hide_title=true&count_private=true&include_all_commits=true&theme=dark" alt="GitHub stats" style="max-width: 100%; border-radius: 10px; border: 1px solid var(--glass-border);">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tunakem9889&layout=compact&hide_title=true&theme=dark" alt="Top Langs" style="max-width: 100%; border-radius: 10px; border: 1px solid var(--glass-border);">
+            </div>
+        </section>
+
+        <!-- Todo Section -->
+        <section id="todo">
+            <h2>Todo List</h2>
+            <div class="todo-container glass">
+                <div class="todo-header-info">
+                    <span class="todo-stats" id="todo-count">0 việc đang chờ</span>
+                </div>
+                
+                <div class="todo-filters">
+                    <button class="todo-tab active" data-filter="all">Tất cả</button>
+                    <button class="todo-tab" data-filter="active">Đang làm</button>
+                    <button class="todo-tab" data-filter="completed">Hoàn thành</button>
+                </div>
+
+                <div class="todo-input-group">
+                    <input type="text" id="todo-input" placeholder="Thêm việc cần làm..." autocomplete="off">
+                    <button id="add-todo-btn" class="btn btn-primary">Thêm</button>
+                </div>
+
+                <div id="todo-list" class="todo-list">
+                    <!-- Todo items will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Liên hệ với tôi</h2>
+            <div class="glass info-card" style="display: inline-block;">
+                <p>Tôi luôn sẵn sàng cho những cơ hội mới và sự hợp tác thú vị.</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:anhtuna417@gmail.com">anhtuna417@gmail.com</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/tunakem9889" target="_blank">github.com/tunakem9889</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script th:src="@{/js/galaxy.js}"></script>
+    <script th:src="@{/js/github.js}"></script>
+    <script th:src="@{/js/todo.js}"></script>
+</body>
+</html>
